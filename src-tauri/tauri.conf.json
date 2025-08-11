@@ -91,5 +91,19 @@
                 "installMode": "passive"
             }
         }
+    },
+"tauri": {
+    "security": {
+      // 允许 HTTP 请求的关键配置
+      "dangerousDisableAssetCspModification": false, // 保持 false
+      "csp": "default-src 'self' data: http: https: ws: wss: blob:;"
+    },
+    "allowlist": {
+      "http": {
+        "all": true, // 允许所有 HTTP 请求
+        "request": true,
+        "scope": ["http://*/*", "https://*/*"] // 通配符允许所有域名
+      }
     }
+  }
 }
